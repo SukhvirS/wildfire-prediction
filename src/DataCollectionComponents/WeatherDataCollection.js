@@ -162,16 +162,19 @@ class WeatherDataCollection extends React.Component{
                 cols.push(newColEntry);
             }
 
-            for(var i=0; i<Object.keys(parsedData['DATE']).length; i++){      
-                var newRowEntry = {}
-                for(const key in parsedData){
-                    var val = parsedData[key][i];
-                    if (val == null){
-                        val = ''
+            console.log(parsedData);
+            if(parsedData['DATE'] != null){
+                for(var i=0; i<Object.keys(parsedData['DATE']).length; i++){      
+                    var newRowEntry = {}
+                    for(const key in parsedData){
+                        var val = parsedData[key][i];
+                        if (val == null){
+                            val = ''
+                        }
+                        newRowEntry[key] = val
                     }
-                    newRowEntry[key] = val
+                    rows.push(newRowEntry);
                 }
-                rows.push(newRowEntry);
             }
 
             var data = {

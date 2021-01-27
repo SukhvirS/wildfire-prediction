@@ -157,17 +157,22 @@ class FireRiskPredictionModEval extends React.Component{
                 cols.push(newColEntry);
             }
 
-            var i = 0;
-            for(i=0; i < rawData['features'].length; i++){
-                var newRowEntry = {}
-                for(var feature of this.state.features){
-                    var val = rawData['features'][i]['attributes'][feature];
-                    if(val == null){
-                        val = ''
+            console.log(rawData);
+            if(rawData != null){
+                if(rawData['error'] == null){
+                    var i = 0;
+                    for(i=0; i < rawData['features'].length; i++){
+                        var newRowEntry = {}
+                        for(var feature of this.state.features){
+                            var val = rawData['features'][i]['attributes'][feature];
+                            if(val == null){
+                                val = ''
+                            }
+                            newRowEntry[feature] = val;
+                        }
+                        rows.push(newRowEntry);
                     }
-                    newRowEntry[feature] = val;
                 }
-                rows.push(newRowEntry);
             }
 
             var data = {

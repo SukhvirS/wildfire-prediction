@@ -138,17 +138,19 @@ class FireHistoryDataCollection extends React.Component{
                 cols.push(newColEntry);
             }
 
-            var i = 0;
-            for(i=0; i < rawData['features'].length; i++){
-                var newRowEntry = {}
-                for(var feature of this.state.features){
-                    var val = rawData['features'][i]['attributes'][feature];
-                    if(val == null){
-                        val = ''
+            if(rawData['features'] != null){
+                var i = 0;
+                for(i=0; i < rawData['features'].length; i++){
+                    var newRowEntry = {}
+                    for(var feature of this.state.features){
+                        var val = rawData['features'][i]['attributes'][feature];
+                        if(val == null){
+                            val = ''
+                        }
+                        newRowEntry[feature] = val;
                     }
-                    newRowEntry[feature] = val;
+                    rows.push(newRowEntry);
                 }
-                rows.push(newRowEntry);
             }
 
             var data = {

@@ -46,18 +46,18 @@ class ImageDetection extends React.Component{
 
         return(
             <div>
-                <MyNavbar/>
+                {/* <MyNavbar/> */}
 
-                <div style={{marginLeft:'15rem'}}>
+                <div>
 
-                    <div style={{position:'fixed', backgroundColor:'#f8f9fa', height:"72px", width:"100%",  borderLeft:'1px solid #d9dadb', borderBottom:"1px solid #d9dadb", paddingLeft:"20px"}}>
+                    {/* <div style={{position:'fixed', backgroundColor:'#f8f9fa', height:"72px", width:"100%",  borderLeft:'1px solid #d9dadb', borderBottom:"1px solid #d9dadb", paddingLeft:"20px"}}>
                         <h1 className='mt-2'>Fire Detection 2</h1>
-                    </div>
+                    </div> */}
 
-                    <div style={{width:'65vw', position:'absolute', marginTop:'72px', zIndex:'-100'}}>
+                    <div style={{position:'absolute', marginTop:'72px', zIndex:'-100'}}>
 
-                        <div style={{width:"100%", marginLeft:20}}>
-                            <h1>Input a File to scanned.</h1>
+                        <div style={{margin:'10px 0 0 20px'}}>
+                            <h3>Input a File to scanned.</h3>
                             <div style={{width:"100%"}}>
                             
                             <form encType="multipart/form-data" action="" style={{padding:10}}> 
