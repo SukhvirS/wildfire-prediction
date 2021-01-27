@@ -111,7 +111,6 @@ class WildfireDetection extends React.Component {
 
   }
 
-  
   // Comsumes the ReadableStream from the Fetch call
   async detectFire() {
     const formData = new FormData();
